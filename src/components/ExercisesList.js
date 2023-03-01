@@ -22,13 +22,13 @@ export default function ExercisesList() {
     const [exercises, setExercises] = React.useState([]);
 
     React.useEffect(() => {
-        axios.get('http://localhost:5000/exercises/')
+        axios.get('https://exercise-tracker-mern-app.onrender.com/exercises/')
             .then(res => { setExercises(res.data) })
             .catch(err => console.log(err))
     }, []);
 
     function deleteExercise(id) {
-        axios.delete('http://localhost:5000/exercises/' + id)
+        axios.delete('https://exercise-tracker-mern-app.onrender.com/exercises/' + id)
             .then(res => console.log(res.data))
             .catch(err => console.log(err));
 

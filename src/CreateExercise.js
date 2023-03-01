@@ -11,7 +11,7 @@ export default function CreateExercise() {
     const [users, setUsers] = React.useState([])
 
     React.useEffect(() => {
-        axios.get('http://localhost:5000/users')
+        axios.get('https://exercise-tracker-mern-app.onrender.com/users')
             .then(res => {
                 if (res.data.length) {
                     setUsers(res.data.map(user => user.username))
@@ -49,7 +49,7 @@ export default function CreateExercise() {
         }
         console.log(exercise)
 
-        axios.post('http://localhost:5000/exercises/add', exercise)
+        axios.post('https://exercise-tracker-mern-app.onrender.com/exercises/add', exercise)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
 

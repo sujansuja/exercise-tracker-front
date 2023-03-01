@@ -12,7 +12,7 @@ export default function EditExercise(props) {
 
     const { id } = useParams()
     React.useEffect(() => {
-        axios.get('http://localhost:5000/exercises/' + id)
+        axios.get('https://exercise-tracker-mern-app.onrender.com/exercises/' + id)
             .then(res => {
                 setUsername(res.data.username)
                 setDescription(res.data.description)
@@ -21,7 +21,7 @@ export default function EditExercise(props) {
             })
             .catch(err => console.log("exercises error" + err));
 
-        axios.get('http://localhost:5000/users/')
+        axios.get('https://exercise-tracker-mern-app.onrender.com/users/')
             .then(res => {
                 if (res.data.length) {
                     setUsers(res.data.map(user => user.username))
@@ -59,7 +59,7 @@ export default function EditExercise(props) {
         }
         console.log(exercise)
 
-        axios.post('http://localhost:5000/exercises/update/' + id, exercise)
+        axios.post('https://exercise-tracker-mern-app.onrender.com/exercises/update/' + id, exercise)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
 
